@@ -1,0 +1,13 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+geojson-to-sqlite = "*"
+census-map-downloader = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
