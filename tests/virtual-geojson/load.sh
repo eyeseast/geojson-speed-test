@@ -17,4 +17,17 @@ if [[ $cycle == 1 ]]; then
     echo "File: $filename"
 fi
 
-pipenv run geojson-to-sqlite $db $table $filename --spatialite
+SQL=$(cat << EOF
+-- create a virtual table
+create virtual table geojson using VirtualGeoJSON($filename);
+
+-- read it into a table
+create table $table as
+select * from geojson;
+
+-- done with the virtual table
+drop table geojson;
+EOF
+)
+
+spatialite -silent "$db" "$SQL"

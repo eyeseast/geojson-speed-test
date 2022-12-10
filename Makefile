@@ -8,6 +8,6 @@ processed/counties_2020.geojson:
 # tests
 
 tests/%/time.txt: processed/counties_2020.geojson
-	/usr/bin/time -o $@ ./$(dir $@)load.sh $< $(dir $@)
+	./test.sh $(dir $@) $<
 
 all: $(TESTS)

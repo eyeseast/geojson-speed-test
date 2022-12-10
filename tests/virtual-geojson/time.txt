@@ -1,0 +1,5 @@
+       80.69 real        76.41 user         3.29 sys
+       80.98 real        76.34 user         3.62 sys
+       80.22 real        76.06 user         2.95 sys
+       77.91 real        74.28 user         2.96 sys
+       82.75 real        77.04 user         3.59 sys
