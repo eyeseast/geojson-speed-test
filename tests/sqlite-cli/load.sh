@@ -21,16 +21,14 @@ SQL=$(cat << EOF
     select load_extension('/usr/local/lib/mod_spatialite.dylib');
     select InitSpatialMetaData();
 
-    create table $table (
-        id integer primary key,
-        properties text
-    );
-
-    select AddGeometryColumn('$table', 'geometry', 4326, 'geometry');
-
-    insert into $table
-    select id, value ->> 'properties' as properties, GeomFromGeoJSON(value ->> 'geometry') as geometry 
-    from json_each(readfile('$filename'), '$.features');
+    create table counties_2020 as
+    select 
+        value ->> '$.properties.state_fips'     as state_fips,
+        value ->> '$.properties.county_fips'    as county_fips,
+        value ->> '$.properties.geoid'          as geoid,
+        value ->> '$.properties.county_name'    as county_name,
+        GeomFromGeoJSON(value ->> '$.geometry') as geometry
+    from json_each(readfile('processed/counties_2020.geojson'), '$.features');
 EOF
 )
 
