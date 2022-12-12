@@ -8,6 +8,7 @@ geojson-to-sqlite = "*"
 census-map-downloader = "*"
 
 [dev-packages]
+ipython = "*"
 
 [requires]
 python_version = "3.11"
