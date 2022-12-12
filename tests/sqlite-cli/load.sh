@@ -17,9 +17,9 @@ if [[ $cycle == 1 ]]; then
     echo "File: $filename"
 fi
 
+# borrowing a bit from Alex Garcia here
 SQL=$(cat << EOF
     select load_extension('/usr/local/lib/mod_spatialite.dylib');
-    select InitSpatialMetaData();
 
     create table counties_2020 as
     select 

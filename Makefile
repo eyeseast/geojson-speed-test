@@ -33,3 +33,6 @@ tests/%/time.txt: processed/counties_2020.geojson
 	./test.sh $(dir $@) $<
 
 all: $(TESTS)
+
+run:
+	pipenv run datasette serve $(shell find . -name test.db) --load-extension spatialite

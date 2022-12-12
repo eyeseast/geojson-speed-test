@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 geojson-to-sqlite = "*"
 census-map-downloader = "*"
+datasette = "*"
+datasette-geojson-map = "*"
 
 [dev-packages]
 ipython = "*"
