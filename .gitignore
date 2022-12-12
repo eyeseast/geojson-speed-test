@@ -81,6 +81,7 @@ venv.bak/
 # data
 raw/
 processed/
+alltheplaces/
 
 *.db
 *.db-shm
