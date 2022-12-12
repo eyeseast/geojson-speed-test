@@ -1,0 +1,5 @@
+        7.69 real         6.69 user         0.80 sys
+        7.51 real         6.71 user         0.75 sys
+        7.51 real         6.67 user         0.80 sys
+        7.55 real         6.67 user         0.81 sys
+        7.49 real         6.67 user         0.78 sys
